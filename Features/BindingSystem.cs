@@ -37,6 +37,8 @@ namespace FEZUG.Features
 
         public void Update(GameTime gameTime)
         {
+            if (FezugConsole.Instance.Handler.Enabled)
+                return;
             foreach (var bindPair in Binds)
             {
                 if (InputHelper.IsKeyPressed(bindPair.Key) || TryConvertKeysToGamepadButtons(bindPair.Key, out var b ) && InputHelper.IsButtonPressed(b))
