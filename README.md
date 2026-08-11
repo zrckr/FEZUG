@@ -31,5 +31,9 @@ This is a [HAT](https://github.com/Krzyhau/HAT) mod which adds some debug functi
 ## Building
 
 1. Clone repository.
-2. Copy all dependencies listed in `Dependencies` directory and paste them into said directory.
-3. Build it. idk. it should work.
+2. Edit `UserProperties.xml` file:
+    1. Remove the line with `UserPropertiesNotSetUp` tag.
+    2. Within `FezDir` tag, insert path to a FEZ game directory (the one which contains `FEZ.exe`).
+    3. Within `MomoModDir`, insert path to MonoMod. If you have HAT installed, it should be under `HATDependencies\MonoMod\` in your FEZ game directory.
+    4. Optionally, set a path to where the mod files should be copied to (for instance, `Mods/FEZUG` in your FEZ game directory with HAT installed). By default, it'll build into `out` directory of a project.
+3. Build the project using your IDE of choice or `dotnet build`.
